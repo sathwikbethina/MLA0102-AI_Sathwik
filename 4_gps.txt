@@ -1,0 +1,23 @@
+BestFirst(StartNode, GoalNode)
+
+    CREATE list Path
+    ADD StartNode to Path
+
+    WHILE StartNode is not GoalNode DO
+
+        IF StartNode has no neighbors THEN
+            PRINT "Path not found"
+            STOP
+        END IF
+
+        NextNode ← Neighbor with minimum Heuristic value
+
+        ADD NextNode to Path
+
+        StartNode ← NextNode
+
+    END WHILE
+
+    RETURN Path
+
+END BestFirst
